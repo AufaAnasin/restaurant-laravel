@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 
 // import the controller
@@ -20,6 +21,9 @@ use Illuminate\Support\Facades\Route;
 // declare the controller
 Route::get('/', [HomeController::class, "index"]);
 
+Route::get('/users', [AdminController::class, "user"]);
+
+// for determine usertyte
 Route::get('/redirects', [HomeController::class, "redirects"]);
 
 Route::middleware([
