@@ -20,11 +20,23 @@
                 <th style="padding: 30px">Email</th>
                 <th style="padding: 30px">Action</th>
         </tr>
+
+        <!-- display the data  -->
+        <!-- data coming from the admin controller -->
+        @foreach($data as $data)
         <tr align="center">
-            <td>Icaufa</td>
-            <td>icaufa@gmail.com</td>
-            <td><a href="">Delete</a></td>
+            <td>{{$data->name}}</td>
+            <td>{{$data->email}}</td>
+            <!-- give conditional if admin data cannot be deleted, and give delete function -->
+            <!-- $data->id used for sending id for delete the data -->
+            @if($data->usertype=="0")
+            <td><a href="{{url('/deleteusers',$data->id)}}">Delete</a></td>
+            @else
+            <td><a>Not Allowed</a></td>
+            @endif
         </tr>
+
+        @endforeach
         </table>
         </div>
     </div>

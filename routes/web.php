@@ -22,6 +22,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, "index"]);
 
 Route::get('/users', [AdminController::class, "user"]);
+Route::get('/foodmenu', [AdminController::class, "foodmenu"]);
+Route::post('/uploadfood', [AdminController::class, "upload"]);
+
+// delete controller
+Route::get('/deleteusers/{id}', [AdminController::class, "deleteuser"]);
 
 // for determine usertyte
 Route::get('/redirects', [HomeController::class, "redirects"]);
