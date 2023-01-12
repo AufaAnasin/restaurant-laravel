@@ -27,6 +27,13 @@ Route::post('/uploadfood', [AdminController::class, "upload"]);
 
 // delete controller
 Route::get('/deleteusers/{id}', [AdminController::class, "deleteuser"]);
+Route::get('/deletefood/{id}', [AdminController::class, "deletefood"]);
+
+// update food
+Route::get('/updateview/{id}', [AdminController::class, "updateview"]);
+Route::post('/update/{id}', [AdminController::class, "update"]);
+
+
 
 // for determine usertyte
 Route::get('/redirects', [HomeController::class, "redirects"]);
